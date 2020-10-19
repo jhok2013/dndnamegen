@@ -1,15 +1,20 @@
-import unittest
+import unittest 
 import sys
+from pathlib import Path
 
 sys.path.insert(0, '..')
 
-from dndnamegen.name_gen_api import name_gen_api
+from dndnamegen.NameGenAPI import NameGenAPI #type: ignore
+
+# C:\Program Files (x86)\Google\Chrome\Application
 
 class test_dndnamegen(unittest.TestCase):
     '''
 
     '''
-    name_gen_api: name_gen_api = name_gen_api()
+    wsl_path: Path = Path('../bin/chromedriver-linux64')
+    #win_path: str = "C:\Program Files (x86)\chromedriver.exe"
+    win_path: str = r"C:\projects\dndnamegen\bin\chromedriver.exe"
     
     def setUp(self):
         return super().setUp()
@@ -21,7 +26,8 @@ class test_dndnamegen(unittest.TestCase):
         '''
 
         '''
-        self.name_gen_api.get_names(race_name='aasimar', source='default')
+        name_gen_api: NameGenAPI = NameGenAPI(binary_path=self.win_path)
+        name_gen_api.generate_names()
 
 if __name__ == "__main__":
     unittest.main()
