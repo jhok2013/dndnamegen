@@ -2,11 +2,10 @@ import unittest
 import sys
 from pathlib import Path
 
-sys.path.insert(0, '..')
+p: Path = str(Path('../dndnamegen').resolve())
+sys.path.insert(0, p)
 
-from dndnamegen.NameGenAPI import NameGenAPI #type: ignore
-
-# C:\Program Files (x86)\Google\Chrome\Application
+from dndnamegen.NameGenAPI import NameGenAPI
 
 class test_dndnamegen(unittest.TestCase):
     '''
@@ -14,7 +13,7 @@ class test_dndnamegen(unittest.TestCase):
     '''
     wsl_path: Path = Path('../bin/chromedriver-linux64')
     win_path: str = "C:\Program Files (x86)\chromedriver.exe"
-    win_bin_path: str = "..\\bin\chromedriver.exe"
+    win_bin_path: str = "C:\projects\dndnamegen\\bin\chromedriver.exe"
     
     def setUp(self):
         return super().setUp()
@@ -22,6 +21,7 @@ class test_dndnamegen(unittest.TestCase):
     def tearDown(self):
         return super().tearDown()
     
+    @unittest.skip('Reason: Redundant test')
     def test_win_path(self) -> None:
         '''
         Tests whether the NameGenAPI can run with the default
@@ -35,6 +35,7 @@ class test_dndnamegen(unittest.TestCase):
             print(e)
             self.fail("Failure: test_win_path has failed.")
     
+    @unittest.skip('Reason: Redundant test')
     def test_win_bin(self) -> None:
         '''
         Tests whether the chromedriver.exe runs can run in the
@@ -47,6 +48,18 @@ class test_dndnamegen(unittest.TestCase):
         except Exception as e:
             print(e)
             self.fail("Failure: test_win_bin has failed.")
+    
+    def test_race_name(self) -> None:
+        '''
+
+        '''
+        try:
+            name_gen_api: NameGenAPI = NameGenAPI(binary_path=self.win_bin_path)
+            name_gen_api.generate_names(race_name='aasimar')
+            self.assertTrue(True, "Test: test_win_bin has passed.")
+        except Exception as e:
+            print(e)
+            self.fail("Failure: test_win_bin has failed.") 
 
 if __name__ == "__main__":
     unittest.main()
