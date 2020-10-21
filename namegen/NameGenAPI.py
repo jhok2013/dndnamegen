@@ -1,15 +1,17 @@
 '''
 C:\Program Files (x86)\Google\Chrome\Application
 '''
-
+# Standard library imports
+from json import loads 
+from pathlib import Path
+from typing import List, Any
 from selenium import webdriver #type: ignore
+
+#Third party imports
 from selenium.webdriver.chrome.options import Options #type: ignore
 from selenium.webdriver.common.by import By #type: ignore
 from selenium.webdriver.support.ui import WebDriverWait #type: ignore
 from selenium.webdriver.support import expected_conditions as EC #type: ignore
-from json import loads 
-from pathlib import Path
-from typing import List, Any
 
 class NameGenAPI(object):
     '''
