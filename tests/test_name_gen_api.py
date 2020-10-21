@@ -1,12 +1,12 @@
 import unittest 
 import sys
 from pathlib import Path
+from typing import List
 
-p: Path = str(Path('../dndnamegen').resolve())
+p: str = "C:\projects"
 sys.path.insert(0, p)
 
-from dndnamegen.NameGenAPI import NameGenAPI
-
+from dndnamegen.namegen.NameGenAPI import NameGenAPI
 class test_dndnamegen(unittest.TestCase):
     '''
     Handles all the tests for the NameGenAPI.
@@ -53,10 +53,19 @@ class test_dndnamegen(unittest.TestCase):
         '''
 
         '''
+        names: List[str] = []
+        name_amount: int
+        return_amount: int
         try:
             name_gen_api: NameGenAPI = NameGenAPI(binary_path=self.win_bin_path)
-            name_gen_api.generate_names(race_name='aasimar')
-            self.assertTrue(True, "Test: test_win_bin has passed.")
+            names = name_gen_api.generate_names(race_name='aasimar')
+            name_amount = 10
+            return_amount = len(names)
+            self.assertEqual(
+                first=name_amount,
+                second=return_amount,
+                msg='Test: Success'
+            )
         except Exception as e:
             print(e)
             self.fail("Failure: test_win_bin has failed.") 
