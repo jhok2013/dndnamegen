@@ -7,7 +7,7 @@ from typing import List
 p: str = "C:\projects"
 sys.path.insert(0, p)
 
-from dndnamegen.namegen.NameGenAPI import NameGenAPI
+from dndnamegen.namegen.NameGenAPI import NameGenAPI #type: ignore
 class test_dndnamegen(unittest.TestCase):
     '''
     Handles all the tests for the NameGenAPI.

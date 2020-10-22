@@ -1,7 +1,303 @@
 {
-    "aarakocra": "dnd-aarakocra-names.php",
-    "aasimar": "dnd-aasimar-names.php",
-    "beholder": "dnd-beholder-names.php",
-    "bugbear": "dnd-centaur-names.php",
-    "changeling": "dnd-changling-names.php"
+    "aarakocra": {
+        "generator": "dnd-aarakocra-names.php",
+        "genders": [
+            "neutral"
+        ]
+    },
+    "aasimar": {
+        "generator": "dnd-aasimar-names.php",
+        "genders": [
+            "male",
+            "female"
+        ]
+    },
+    "beholder": {
+        "generator": "dnd-beholder-names.php",
+        "genders": [
+            "neutral"
+        ]
+    },
+    "bugbear": {
+        "generator": "dnd-bugbear-names.php",
+        "gender": [
+            "neutral"
+        ]
+    },
+    "centaur": {
+        "generator": "dnd-centaur-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "changeling": {
+        "generator": "dnd-changeling-names.php",
+        "gender": [
+            "neutral"
+        ]
+    },
+    "deep gnome": {
+        "generator": "dnd-deep-gnome-names.php",
+        "gender": [
+            "male",
+            "female"   
+        ]
+    },
+    "deva": {
+        "generator": "dnd-deva-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "dragonborn": {
+        "generator": "dnd-dragonborn-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "drow": {
+        "generator": "dnd-drow-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "dwarf": {
+        "generator": "dnd-dwarf-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "eladrin": {
+        "generator": "dnd-eladrin-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "elf": {
+        "generator": "dnd-elf-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "firbolg": {
+        "generator": "dnd-firbolg-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "genasi": {
+        "generator": "dnd-genasi-names.php",
+        "gender": [
+            "neutral"
+        ]
+    },
+    "githzerai": {
+        "generator": "dnd-githzerai-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "gnoll": {
+        "generator": "dnd-gnoll-names.php",
+        "gender": [
+            "neutral"
+        ]
+    },
+    "gnome": {
+        "generator": "dnd-gnome-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "goblin": {
+        "generator": "dnd-goblin-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "goliath": {
+        "generator": "dnd-goliath-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "hag": {
+        "generator": "dnd-hag-names.php",
+        "gender": [
+            "neutral"
+        ]
+    },
+    "half-elf": {
+        "generator": "dnd-half-elf-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "half-orc": {
+        "generator": "dnd-half-orc-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "halfling": {
+        "generator": "dnd-halfling-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "hobgoblin": {
+        "generator": "dnd-hobgoblin-names.php",
+        "gender": [
+            "neutral"
+        ]
+    },
+    "human": {
+        "generator": "dnd-human-names.php",
+        "gender": [
+            "male",
+            "female",
+            "old male",
+            "old female"
+        ]
+    },
+    "kalashtar": {
+        "generator": "dnd-kalashtar-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "kenku": {
+        "generator": "dnd-kenku-names.php",
+        "gender": [
+            "neutral"
+        ]
+    },
+    "kobold": {
+        "generator": "dnd-kobold-names.php",
+        "gender": [
+            "neutral"
+        ]
+    },
+    "lizardfolk": {
+        "generator": "dnd-lizardfolk-names.php",
+        "gender": [
+            "neutral"
+        ]
+    },
+    "loxodon": {
+        "generator": "dnd-loxodon-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "mind flayer": {
+        "generator": "dnd-mind-flayer-names.php",
+        "gender": [
+            "neutral"
+        ]
+    },
+    "minotaur": {
+        "generator": "dnd-minotaur-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "orc": {
+        "generator": "dnd-orc-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "shardmind": {
+        "generator": "dnd-shardmind-names.php",
+        "gender": [
+            "neutral"
+        ]
+    },
+    "shifter": {
+        "generator": "dnd-shifter-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "simic hybrid": {
+        "generator": "dnd-simic-hybrid-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "tabaxi": {
+        "generator": "dnd-tabaxi-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "tiefling": {
+        "generator": "dnd-tiefling-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "tortle": {
+        "generator": "dnd-tortle-names.php",
+        "gender": [
+            "neutral"
+        ]
+    },
+    "triton": {
+        "generator": "dnd-triton-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "vedalken": {
+        "generator": "dnd-vedalken-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "warforged": {
+        "generator": "dnd-warforged-names.php",
+        "gender": [
+            "neutral"
+        ]
+    },
+    "wilden": {
+        "generator": "dnd-wilden-names.php",
+        "gender": [
+            "male",
+            "female"
+        ]
+    },
+    "yuan-ti": {
+        "generator": "dnd-yuan-ti-names.php",
+        "gender": [
+            "neutral"
+        ]
+    }
 }
