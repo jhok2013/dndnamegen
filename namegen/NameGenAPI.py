@@ -22,7 +22,8 @@ class NameGenAPI(object):
     gender: str
 
     def __init__(self, race_name: str = 'Default', source: str = 'Default', 
-                       name_amount: int = 1, binary_path: str = 'Default'):
+                       name_amount: int = 1, gender: Union[List[str], str] = 'Default',
+                       binary_path: str = 'Default'):
         '''
 
         '''
@@ -30,8 +31,10 @@ class NameGenAPI(object):
         self.source = source
         self.name_amount = name_amount
         self.binary_path = binary_path
+        self.gender = gender #type: ignore
 
     def generate_names(self, race_name: str = 'Default', 
+                        gender: Union[List[str], str] = 'Default',
                         source: str = 'Default', 
                         name_amount: int = 1) -> Union[List[str], str]:
         '''
@@ -39,7 +42,6 @@ class NameGenAPI(object):
         race, and gender. Can use default values or if no input is given, will use
         random values.
         
-
         Parameters
         ----------
         race_name: str
@@ -57,9 +59,10 @@ class NameGenAPI(object):
             List[str]
         '''
 
-        #- [] Add ability to call male or female names specifically.
+        #- [x] Add ability to call male or female names specifically.
         #- [x] Update name_generators.json to include gender information.
-        #- [] Add packet ability to get names from multiple races and genders
+        #- [] Add feature to get only the specified amount of names total, instead of all
+        #- [] Add packet ability to get names from multiple races and gender
         #  and return them as a json packet
         #- [] Add source filter to name_generator.json file
 
@@ -67,34 +70,52 @@ class NameGenAPI(object):
         self.race_name = race_name if race_name else self.race_name
         self.source = source if source else self.source
         self.name_amount = name_amount if name_amount else self.name_amount
+        self.gender = gender if gender else self.gender #type: ignore
 
         # Add return variable
         names: Union[List[str], str] = []
+        names_text: str = ''
+        result_tag: str = ''
 
         # Add options for chromedriver
         opts: Options = Options()
         opts.add_argument('--headless')
         opts.add_argument('--disable-gpu')
-        race_packet: Dict[str, str] = self.__get_packet(race_name=race_name)
+
+        # Get race information
+        race_packet: Dict[str, str] = self.__get_packet()
         race_url: str = race_packet[self.race_name]['generator'] #type: ignore
         url: str = ''.join([self._base_url, race_url])
+
+        # Get button & xpath information
+        button_list: List[str] = self.__get_button_list(race_packet=race_packet)
+        result_id: str = '//*[@id="result"]'
 
         # Get binary path from input
         binary_path: str = self.binary_path
 
-        #Open browser and go to url
+        # Open browser and go to url
         browser: Any = webdriver.Chrome(executable_path=binary_path, options=opts) 
         browser.get(url=url)
-        main = WebDriverWait(driver=browser, timeout=10).until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="result"]'))
-        )
-        result_tag: str = main.find_element_by_xpath('//*[@id="result"]').text
-        names = result_tag.splitlines()
+
+        # Click button and append result_tag
+        for button in button_list:
+            input_button = browser.find_element_by_xpath(button)
+            input_button.click()
+            result_tag = WebDriverWait(
+                driver=browser,
+                timeout=10).until(
+                    EC.presence_of_element_located(
+                        (By.XPATH,
+                        result_id))).find_element_by_xpath(result_id).text
+            names_text += '\n' + result_tag
+        names = names_text.splitlines()
+        names.remove('')
         browser.quit()
 
         return names
     
-    def __get_packet(self, race_name: str) -> Dict[str, str]:
+    def __get_packet(self) -> Dict[str, str]:
         '''
         Retrieves the data packet for a given race name, filter by race.
         TODO:
@@ -103,13 +124,12 @@ class NameGenAPI(object):
 
         Parameters
         ----------
-        race_name: str
-            A name for the race that is used in the name generation.
+        None
 
         Returns
         -------
         packet: Dict[str, str]
-            The data packet for a race which contains possible genders for names,
+            The data packet for a race which contains possible gender for names,
             source names, and the generator file that will be used in the url.
         '''
         # Establish file and return variables
@@ -120,6 +140,21 @@ class NameGenAPI(object):
         # Open file and retrieve packet
         with open(path, 'r+') as f:
             gen_dict = loads(f.read())
-            packet = {k: x for (k, x) in gen_dict.items() if k == race_name}
+            packet = {k: x for (k, x) in gen_dict.items() if k == self.race_name}
 
         return packet
+    
+    def __get_button_list(self, race_packet: Dict[str, str]) -> List[str]:
+        '''
+
+        '''
+        button_dict: Dict[str, str] = {
+            "male": "/html/body/div/div[2]/div/div[4]/div[1]/input[1]",
+            "female": "/html/body/div/div[2]/div/div[4]/div[1]/input[2]",
+            "neutral": "/html/body/div/div[2]/div/div[4]/div[1]/input",
+            "old male": "/html/body/div/div[2]/div/div[4]/div[1]/input[3]",
+            "old female": "/html/body/div/div[2]/div/div[4]/div[1]/input[4]"
+        }
+        available_genders: List[str] = list(race_packet[self.race_name]['gender']) #type: ignore
+        button_list: List[str] = [x for (k, x) in button_dict.items() if k in available_genders and (k in self.gender or k == self.gender)]
+        return button_list

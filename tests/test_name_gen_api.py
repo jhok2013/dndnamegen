@@ -50,7 +50,7 @@ class test_dndnamegen(unittest.TestCase):
             print(e)
             self.fail("Failure: test_win_bin has failed.")
     
-    def test_race_name(self) -> None:
+    def test_multiple_genders(self) -> None:
         '''
 
         '''
@@ -59,8 +59,71 @@ class test_dndnamegen(unittest.TestCase):
         return_amount: int
         try:
             name_gen_api: NameGenAPI = NameGenAPI(binary_path=self.win_bin_path)
-            names = name_gen_api.generate_names(race_name='aasimar')
+            names = name_gen_api.generate_names(race_name='aasimar', gender=['male', 'female'])
+            name_amount = 20
+            return_amount = len(names)
+            self.assertEqual(
+                first=name_amount,
+                second=return_amount,
+                msg='Test: test_multiple_genders has succeeded.'
+            )
+        except Exception as e:
+            print(e)
+            self.fail("Failure: test_multiple_genders has failed.") 
+
+    def test_single_gender(self) -> None:
+        '''
+
+        '''
+        names: List[str] = []
+        name_amount: int
+        return_amount: int
+        try:
+            name_gen_api: NameGenAPI = NameGenAPI(binary_path=self.win_bin_path)
+            names = name_gen_api.generate_names(race_name='aasimar', gender=['male'])
             name_amount = 10
+            return_amount = len(names)
+            self.assertEqual(
+                first=name_amount,
+                second=return_amount,
+                msg='Test: test_single_gender has succeeded.'
+            )
+        except Exception as e:
+            print(e)
+            self.fail("Failure: test_single_gender has failed.") 
+    
+    def test_single_gender_str(self) -> None:
+        '''
+
+        '''
+        names: List[str] = []
+        name_amount: int
+        return_amount: int
+        try:
+            name_gen_api: NameGenAPI = NameGenAPI(binary_path=self.win_bin_path)
+            names = name_gen_api.generate_names(race_name='aasimar', gender='male')
+            name_amount = 10
+            return_amount = len(names)
+            self.assertEqual(
+                first=name_amount,
+                second=return_amount,
+                msg='Test: test_single_gender_str has succeeded'
+            )
+        except Exception as e:
+            print(e)
+            self.fail("Failure: test_single_gender_str has failed.")
+    
+    def test_human_genders(self) -> None:
+        '''
+
+        '''
+        names: List[str] = []
+        name_amount: int
+        return_amount: int
+        try:
+            name_gen_api: NameGenAPI = NameGenAPI(binary_path=self.win_bin_path)
+            names = name_gen_api.generate_names(race_name='human', gender=['male', 'female', 'old male', 'old female'])
+            name_amount = 64
             return_amount = len(names)
             self.assertEqual(
                 first=name_amount,
@@ -69,7 +132,7 @@ class test_dndnamegen(unittest.TestCase):
             )
         except Exception as e:
             print(e)
-            self.fail("Failure: test_win_bin has failed.") 
+            self.fail("Failure: test_win_bin has failed.")   
 
 if __name__ == "__main__":
     unittest.main()
