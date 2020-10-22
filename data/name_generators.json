@@ -1,20 +1,20 @@
 {
     "aarakocra": {
         "generator": "dnd-aarakocra-names.php",
-        "genders": [
+        "gender": [
             "neutral"
         ]
     },
     "aasimar": {
         "generator": "dnd-aasimar-names.php",
-        "genders": [
+        "gender": [
             "male",
             "female"
         ]
     },
     "beholder": {
         "generator": "dnd-beholder-names.php",
-        "genders": [
+        "gender": [
             "neutral"
         ]
     },
