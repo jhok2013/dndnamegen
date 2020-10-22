@@ -64,7 +64,7 @@ class NameGenAPI(object):
         #- [] Add feature to get only the specified amount of names total, instead of all
         #- [] Add packet ability to get names from multiple races and gender
         #  and return them as a json packet
-        #- [] Add source filter to name_generator.json file
+        #- [] Add source filter to name_generator.json file PRIORITY
 
         # Adjust self variables if needed
         self.race_name = race_name if race_name else self.race_name
@@ -148,6 +148,7 @@ class NameGenAPI(object):
         '''
 
         '''
+        # Make xpath paths to input buttons for genders
         button_dict: Dict[str, str] = {
             "male": "/html/body/div/div[2]/div/div[4]/div[1]/input[1]",
             "female": "/html/body/div/div[2]/div/div[4]/div[1]/input[2]",
@@ -155,6 +156,11 @@ class NameGenAPI(object):
             "old male": "/html/body/div/div[2]/div/div[4]/div[1]/input[3]",
             "old female": "/html/body/div/div[2]/div/div[4]/div[1]/input[4]"
         }
+
+        # Get genders from race_packet
         available_genders: List[str] = list(race_packet[self.race_name]['gender']) #type: ignore
+
+        # Get xpath for each gender and return as list
         button_list: List[str] = [x for (k, x) in button_dict.items() if k in available_genders and (k in self.gender or k == self.gender)]
+
         return button_list

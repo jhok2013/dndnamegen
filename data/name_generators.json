@@ -3,25 +3,37 @@
         "generator": "dnd-aarakocra-names.php",
         "gender": [
             "neutral"
-        ]
+        ],
+        "source": ["Elemental Evil Player's Companion"]
     },
     "aasimar": {
         "generator": "dnd-aasimar-names.php",
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Volo's Guide to Monsters",
+            "Dungeon Master's Guide"
         ]
     },
     "beholder": {
         "generator": "dnd-beholder-names.php",
         "gender": [
             "neutral"
+        ],
+        "source": [
+            "NA"
         ]
     },
     "bugbear": {
         "generator": "dnd-bugbear-names.php",
         "gender": [
             "neutral"
+        ],
+        "source": [
+            "Volo's Guide to Monsters",
+            "Ebberon: Rising from the Last War"   
         ]
     },
     "centaur": {
@@ -29,12 +41,19 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Mythic Odysseys of Theros",
+            "Guildmaster's Guide to Ravnica"
         ]
     },
     "changeling": {
         "generator": "dnd-changeling-names.php",
         "gender": [
             "neutral"
+        ],
+        "source": [
+            "Ebberon: Rising from the Last War"
         ]
     },
     "deep gnome": {
@@ -42,6 +61,10 @@
         "gender": [
             "male",
             "female"   
+        ],
+        "source": [
+            "Sword Coast Adventurer's Guide",
+            "Mordenkainen's Tome of Foes"
         ]
     },
     "deva": {
@@ -49,6 +72,9 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "NA"
         ]
     },
     "dragonborn": {
@@ -56,6 +82,10 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+           "Player's Handbook",
+           "Explorer's Guide to Wildemount" 
         ]
     },
     "drow": {
@@ -63,6 +93,10 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Sword Coast Adventurer's Guide",
+            "Player's Handbook"
         ]
     },
     "dwarf": {
@@ -70,6 +104,11 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Player's Handbook",
+            "Mordenkainen's Tome of Foes",
+            "Ebberon: Rising from the Last War"
         ]
     },
     "eladrin": {
@@ -77,6 +116,10 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Mordenkainen's Tome of Foes",
+            "Dungeon Master's Guide"
         ]
     },
     "elf": {
@@ -84,6 +127,14 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Player's Handbook",
+            "Sword Coast Adventurer's Guide",
+            "Mordenkainen's Tome of Foes",
+            "Ebberon: Rising from the Last War",
+            "Dungeon Master's Guide",
+            "Explorer's Guide to Wildemount"
         ]
     },
     "firbolg": {
@@ -91,12 +142,18 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Volo's Guide to Monsters"
         ]
     },
     "genasi": {
         "generator": "dnd-genasi-names.php",
         "gender": [
             "neutral"
+        ],
+        "source": [
+            "Elemental Evil Player's Companion"
         ]
     },
     "githzerai": {
@@ -104,12 +161,18 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Mordenkainen's Tome of Foes"
         ]
     },
     "gnoll": {
         "generator": "dnd-gnoll-names.php",
         "gender": [
             "neutral"
+        ],
+        "source": [
+            "NA"
         ]
     },
     "gnome": {
@@ -117,6 +180,12 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Sword Coast Adventurer's Guide",
+            "Player's Handbook",
+            "Mordenkainen's Tome of Foes",
+            "Ebberon: Rising from the Last War"
         ]
     },
     "goblin": {
@@ -124,6 +193,11 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Volo's Guide to Monsters",
+            "Guildmaster's Guide to Ravnica",
+            "Ebberon: Rising from the Last War"
         ]
     },
     "goliath": {
@@ -131,12 +205,18 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Volo's Guide to Monsters"
         ]
     },
     "hag": {
         "generator": "dnd-hag-names.php",
         "gender": [
             "neutral"
+        ],
+        "source": [
+            "NA"
         ]
     },
     "half-elf": {
@@ -144,6 +224,11 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Sword Coast Adventurer's Guide",
+            "Player's Handbook",
+            "Ebberon: Rising from the Last War"
         ]
     },
     "half-orc": {
@@ -151,6 +236,10 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Player's Handbook",
+            "Ebberon: Rising from the Last War"
         ]
     },
     "halfling": {
@@ -158,12 +247,22 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Player's Handbook",
+            "Sword Coast Adventurer's Guide",
+            "Ebberon: Rising from the Last War",
+            "Explorer's Guide to Wildemount"
         ]
     },
     "hobgoblin": {
         "generator": "dnd-hobgoblin-names.php",
         "gender": [
             "neutral"
+        ],
+        "source": [
+            "Volo's Guide to Monsters",
+            "Ebberon: Rising from the Last War"
         ]
     },
     "human": {
@@ -173,6 +272,10 @@
             "female",
             "old male",
             "old female"
+        ],
+        "source": [
+            "Player's Handbook",
+            "Ebberon: Rising from the Last War"
         ]
     },
     "kalashtar": {
@@ -180,24 +283,36 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Ebberon: Rising from the Last War"
         ]
     },
     "kenku": {
         "generator": "dnd-kenku-names.php",
         "gender": [
             "neutral"
+        ],
+        "source": [
+            "Volo's Guide to Monsters"
         ]
     },
     "kobold": {
         "generator": "dnd-kobold-names.php",
         "gender": [
             "neutral"
+        ],
+        "source": [
+            "Volo's Guide to Monsters"
         ]
     },
     "lizardfolk": {
         "generator": "dnd-lizardfolk-names.php",
         "gender": [
             "neutral"
+        ],
+        "source": [
+            "Volo's Guide to Monsters"
         ]
     },
     "loxodon": {
@@ -205,12 +320,18 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Guildmaster's Guide to Ravnica"
         ]
     },
     "mind flayer": {
         "generator": "dnd-mind-flayer-names.php",
         "gender": [
             "neutral"
+        ],
+        "source": [
+            "NA"
         ]
     },
     "minotaur": {
@@ -218,6 +339,10 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Mythic Odysseys of Theros",
+            "Guildmaster's Guide to Ravnica"
         ]
     },
     "orc": {
@@ -225,12 +350,20 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Volo's Guide to Monsters",
+            "Ebberon: Rising from the Last War",
+            "Explorer's Guide to Wildemount"
         ]
     },
     "shardmind": {
         "generator": "dnd-shardmind-names.php",
         "gender": [
             "neutral"
+        ],
+        "source": [
+            "NA"
         ]
     },
     "shifter": {
@@ -238,6 +371,9 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Ebberon: Rising from the Last War"
         ]
     },
     "simic hybrid": {
@@ -245,6 +381,9 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Guildmaster's Guide to Ravnica"
         ]
     },
     "tabaxi": {
@@ -252,6 +391,9 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Volo's Guide to Monsters"
         ]
     },
     "tiefling": {
@@ -259,12 +401,20 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Sword Coast Adventurer's Guide",
+            "Player's Handbook",
+            "Mordenkainen's Tome of Foes"
         ]
     },
     "tortle": {
         "generator": "dnd-tortle-names.php",
         "gender": [
             "neutral"
+        ],
+        "source": [
+            "NA"
         ]
     },
     "triton": {
@@ -272,6 +422,10 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Volo's Guide to Monsters",
+            "Mordenkainen's Tome of Foes"
         ]
     },
     "vedalken": {
@@ -279,12 +433,18 @@
         "gender": [
             "male",
             "female"
+        ],
+        "source": [
+            "Guildmaster's Guide to Ravnica"
         ]
     },
     "warforged": {
         "generator": "dnd-warforged-names.php",
         "gender": [
             "neutral"
+        ],
+        "source": [
+            "Ebberon: Rising from the Last War"
         ]
     },
     "wilden": {
@@ -292,12 +452,18 @@
         "gender": [
             "male",
             "female"
+        ],
+        "wilden": [
+            "NA"
         ]
     },
     "yuan-ti": {
         "generator": "dnd-yuan-ti-names.php",
         "gender": [
             "neutral"
+        ],
+        "source": [
+            "Volo's Guide to Monsters"
         ]
     }
 }
